@@ -1,0 +1,910 @@
+<h2>Formulaire </h2>
+	<div class="container">
+		<div class="main-partie">
+			<h3>A ton tour de jouer&nbsp;!</h3>
+			<p>Ajoutez vos propres trollpicks sur le site en nous proposant vos builds et vos runes. Nous ajouterons ceux qui nous plaisent en vous créditant.</p>
+
+			<form id="creationtrollpick" method="POST" action="./traitement.php" >
+				<fieldset>
+					<legend>Informations personnelles</legend>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="nom">Nom</label>
+							<input class="zone-formulaire" type="text" id="nom" name="nom" placeholder="Nom" required />
+						</div>
+
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="prenom">Prénom</label>
+							<input class="zone-formulaire" type="text" id="prenom" name="prenom" placeholder="Prénom" required />
+						</div>
+					</div>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="age">Âge*</label>
+							<input class="zone-formulaire" type="number" id="age" name="age" min="1" max="100" placeholder="Âge"/>
+						</div>
+
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="datenaissance">Date de naissance*</label>
+							<input class="zone-formulaire" type="date" id="datenaissance" name="datenaissance"/>
+						</div>
+					</div>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="pseudo">Pseudonyme</label>
+							<input class="zone-formulaire" type="text" id="pseudo" name="pseudo" placeholder="Pseudonyme" required/> 
+							<em>Nécessaire pour créditer le pick</em>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Informations sur le trollpick</legend>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="champion"> Champion</label> 
+							<select class="zone-formulaire" id="champion" name="champion" size=1 required>
+								<option value="" disabled selected>Choisissez un champion...</option>
+								<option>Aatrox</option>
+								<option>Ahri</option>
+								<option>Akali</option>
+								<option>Akshan</option>
+								<option>Alistar</option>
+								<option>Amumu</option>
+								<option>Anivia</option>
+								<option>Annie</option>
+								<option>Aphelios</option>
+								<option>Ashe</option>
+								<option>Aurélion Sol</option>
+								<option>Aurora</option>
+								<option>Azir</option>
+								<option>Bard</option>
+								<option>Bel'veth</option>
+								<option>Blitzcrank</option>
+								<option>Brand</option>
+								<option>Braum</option>
+								<option>Briar</option>
+								<option>Caitlyn</option>
+								<option>Camille</option>
+								<option>Cassiopeia</option>
+								<option>Cho'gath</option>
+								<option>Corki</option>
+								<option>Darius</option>
+								<option>Diana</option>
+								<option>Dr. Mundo</option>
+								<option>Draven</option>
+								<option>Ekko</option>
+								<option>Elise</option>
+								<option>Evelynn</option>
+								<option>Ezreal</option>
+								<option>Fiddlesticks</option>
+								<option>Fiora</option>
+								<option>Fizz</option>
+								<option>Galio</option>
+								<option>Gangplank</option>
+								<option>Garen</option>
+								<option>Gnar</option>
+								<option>Gragas</option>
+								<option>Graves</option>
+								<option>Gwen</option>
+								<option>Hecarim</option>
+								<option>Heimerdinger</option>
+								<option>Hwei</option>
+								<option>Illaoi</option>
+								<option>Irelia</option>
+								<option>Ivern</option>
+								<option>Janna</option>
+								<option>Jarvan IV</option>
+								<option>Jax</option>
+								<option>Jayce</option>
+								<option>Jhin</option>
+								<option>Jinx</option>
+								<option>K'santé</option>
+								<option>Kai'sa</option>
+								<option>Kalista</option>
+								<option>Karma</option>
+								<option>Karthus</option>
+								<option>Kassadin</option>
+								<option>Katarina</option>
+								<option>Kayle</option>
+								<option>Kayn</option>
+								<option>Kennen</option>
+								<option>Kha'zix</option>
+								<option>Kindred</option>
+								<option>Kled</option>
+								<option>Kog'maw</option>
+								<option>Leblanc</option>
+								<option>Lee sin</option>
+								<option>Leona</option>
+								<option>Lillia</option>
+								<option>Lissandra</option>
+								<option>Lucian</option>
+								<option>Lulu</option>
+								<option>Lux</option>
+								<option>Malphite</option>
+								<option>Malzahar</option>
+								<option>Maokai</option>
+								<option>Maître Yi</option>
+								<option>Milio</option>
+								<option>Miss Fortune</option>
+								<option>Mordekaiser</option>
+								<option>Morgana</option>
+								<option>Naafiri</option>
+								<option>Nami</option>
+								<option>Nasus</option>
+								<option>Nautilus</option>
+								<option>Neeko</option>
+								<option>Nidalee</option>
+								<option>Nilah</option>
+								<option>Nocturne</option>
+								<option>Nunu et Willump</option>
+								<option>Olaf</option>
+								<option>Orianna</option>
+								<option>Ornn</option>
+								<option>Panthéon</option>
+								<option>Poppy</option>
+								<option>Pyke</option>
+								<option>Qiyana</option>
+								<option>Quinn</option>
+								<option>Rakan</option>
+								<option>Rammus</option>
+								<option>Rek'sai</option>
+								<option>Rell</option>
+								<option>Renata Glasc</option>
+								<option>Renekton</option>
+								<option>Rengar</option>
+								<option>Riven</option>
+								<option>Rumble</option>
+								<option>Ryze</option>
+								<option>Samira</option>
+								<option>Sejuani</option>
+								<option>Senna</option>
+								<option>Sett</option>
+								<option>Shaco</option>
+								<option>Shen</option>
+								<option>Shyvana</option>
+								<option>Singed</option>
+								<option>Sion</option>
+								<option>Sivir</option>
+								<option>Skarner</option>
+								<option>Smolder</option>
+								<option>Sona</option>
+								<option>Soraka</option>
+								<option>Swain</option>
+								<option>Sylas</option>
+								<option>Syndra</option>
+								<option>Séraphine</option>
+								<option>Tahm Kench</option>
+								<option>Taliyah</option>
+								<option>Talon</option>
+								<option>Taric</option>
+								<option>Teemo</option>
+								<option>Thresh</option>
+								<option>Tristana</option>
+								<option>Trundle</option>
+								<option>Tryndamere</option>
+								<option>Twisted Fate</option>
+								<option>Twitch</option>
+								<option>Udyr</option>
+								<option>Urgot</option>
+								<option>Varus</option>
+								<option>Vayne</option>
+								<option>Veigar</option>
+								<option>Vel'koz</option>
+								<option>Vex</option>
+								<option>Vi</option>
+								<option>Viego</option>
+								<option>Viktor</option>
+								<option>Vladimir</option>
+								<option>Volibear</option>
+								<option>Warwick</option>
+								<option>Wukong</option>
+								<option>Xayah</option>
+								<option>Xerath</option>
+								<option>Xin zhao</option>
+								<option>Yasuo</option>
+								<option>Yone</option>
+								<option>Yorick</option>
+								<option>Yuumi</option>
+								<option>Zac</option>
+								<option>Zed</option>
+								<option>Zeri</option>
+								<option>Ziggs</option>
+								<option>Zilean</option>
+								<option>Zoé</option>
+								<option>Zyra</option>
+							</select>
+						</div>
+
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="nomtrollpick"> Nom du trollpick*</label>
+							<input class="zone-formulaire" type="text" id="nomtrollpick" name="nomtrollpick" placeholder="Nom trollpick"/>
+						</div>
+					</div>
+
+					<div class="text-formulaire">Rôle(s)&nbsp;:</div>
+					<div class="partie-formulaire row">
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-3 col-lg-2">
+							<input type="checkbox" id="top" name="role[]" value="top">
+							<label for="top"> Toplane</label>
+						</div>
+					
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-3 col-lg-2">
+							<input type="checkbox" id="jgl" name="role[]" value="jgl">
+							<label for="jgl"> Jungle</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-3 col-lg-2">
+							<input type="checkbox" id="mid" name="role[]" value="mid">
+							<label for="mid"> Midlane</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-3 col-lg-2">
+							<input type="checkbox" id="adc" name="role[]" value="adc">
+							<label for="adc"> ADC</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-3 col-lg-2">
+							<input type="checkbox" id="sup" name="role[]" value="sup">
+							<label for="sup"> Support</label>
+						</div>
+					</div>
+				</fieldset>	
+
+				<fieldset>
+					<legend>Build</legend>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="bottes"> Bottes</label> 
+							<select class="zone-formulaire" id="bottes" name="bottes" size=1 required>
+								<option value="" disabled selected>Bottes...</option>
+								<option>Ames synchronisées</option>
+								<option>Bottes de célérité</option>
+								<option>Bottes de lucidité</option>
+								<option>Chaussures de sorcier</option>
+								<option>Coques en acier</option>
+								<option>Jambières du berzerker</option>
+								<option>Sandales de Mercure</option>
+							</select>
+							<em>Bottes uniquement ici</em>
+						</div>
+
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="objet1"> 1er Objet</label> 
+							<select class="zone-formulaire" id="objet1" name="objet1" size=1 required>
+									<option value="" disabled selected>Objets principaux...</option>
+								<optgroup label="Objets supports">
+									<option>Mélodie du sang</option>
+									<option>Opposition céleste</option>
+									<option>Pique dimensionnelle de Zaz'Zak</option>
+									<option>Rêve éveillé</option>
+									<option>Traîneau du solstice</option>
+								</optgroup>
+								<optgroup label="Objets légendaires">
+									<option>Ange gardien</option>
+									<option>Approche de l'hiver</option>
+									<option>Arc axiomatique</option>
+									<option>Arc-bouclier immortel</option>
+									<option>Armure de Warmog</option>
+									<option>Armure sanguine</option>
+									<option>Au bout du rouleau</option>
+									<option>Bâton de l'Archange</option>
+									<option>Bâton des flots</option>
+									<option>Bâton du vide</option>
+									<option>Bâton séculaire</option>
+									<option>Bénédiction de Mikael</option>
+									<option>Brise-coques</option>
+									<option>Canon ultrarapide</option>
+									<option>Ceinture-roquette Hextech</option>
+									<option>Chant de guerre de Shurelya</option>
+									<option>Ciel éventré</option>
+									<option>Cimeterre mercuriel</option>
+									<option>Coeuracier</option>
+									<option>Coeur de l'aube</option>
+									<option>Coeur gelé</option>
+									<option>Coiffe de Rabadon</option>
+									<option>Compagnon de Luden</option>
+									<option>Concentration lointaine</option>
+									<option>Convergence de Zeke</option>
+									<option>Cotte épineuse</option>
+									<option>Couperet noir</option>
+									<option>Créateur de failles</option>
+									<option>Crochet de serpent</option>
+									<option>Cyclosabre voltaïque</option>
+									<option>Danse de la mort</option>
+									<option>Danseur fantôme</option>
+									<option>Dent de Nashor</option>
+									<option>Déséspoir infini</option>
+									<option>Echos d'Hélia</option>
+									<option>Eclipse</option>
+									<option>Egide solaire</option>
+									<option>Encensoir ardent</option>
+									<option>Epée dentelée chimico-punk</option>
+									<option>Estropieur</option>
+									<option>Faux spectrale</option>
+									<option>Flamme-ombre</option>
+									<option>Fléau de Liche</option>
+									<option>Flèches des Yun Tal</option>
+									<option>Fleur de crypte</option>
+									<option>Force de la nature</option>
+									<option>Force de la trinité</option>
+									<option>Gage de Sterak</option>
+									<option>Gantelet givrant</option>
+									<option>Glaive d'ombre</option>
+									<option>Gueule de Malmortius</option>
+									<option>Hexplaque expérimentale</option>
+									<option>Hydre profane</option>
+									<option>Hydre titanesque</option>
+									<option>Hydre vorace</option>
+									<option>Jak'Sho le protéiforme</option>
+									<option>Lame d'infini</option>
+									<option>Lame du roi déchu</option>
+									<option>Lame enragée de Guinsoo</option>
+									<option>Lame spectre de Youmuu</option>
+									<option>Lance de Shojin</option>
+									<option>Malfaisance</option>
+									<option>Manamune</option>
+									<option>Mandat impérial</option>
+									<option>Manteau de la nuit</option>
+									<option>Masque abyssal</option>
+									<option>Médaillon d'Iron Solari</option>
+									<option>Morellonomicon</option>
+									<option>Onde orageuse</option>
+									<option>Opportunité</option>
+									<option>Orgueil</option>
+									<option>Ouragan de Runaan</option>
+									<option>Percepteur</option>
+									<option>Plaque du mort</option>
+									<option>Présage de Randuin</option>
+									<option>Poignard de Statikk</option>
+									<option>Rancune de Serylda</option>
+									<option>Rappel mortel</option>
+									<option>Rayonnement du vide</option>
+									<option>Rédemption</option>
+									<option>Régénérateur de pierre de lune</option>
+									<option>Rookern kaénique</option>
+									<option>Sablier de Zhonya</option>
+									<option>Sac de l'explorateur</option>
+									<option>Salutations de Dominik</option>
+									<option>Sceptre de Rylai</option>
+									<option>Soif-de-sang</option>
+									<option>Terminus</option>
+									<option>Torche noire</option>
+									<option>Tourment de Liandry</option>
+									<option>Tremblelame Navori</option>
+									<option>Tueur de Kraken</option>
+									<option>Visage spirituel</option>
+									<option>Voeu du chevalier</option>
+									<option>Voile de la Banshee</option>
+									<option>Voleur d'âme de Mejai</option>
+									<option>Volonté cosmique</option>
+								</optgroup>
+							</select> 
+							<em>Objets de supports uniquement ici</em>
+						</div>
+					</div>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="objet2"> 2ème Objet</label> 
+							<select class="zone-formulaire" id="objet2" name="objet2" size=1 required>
+								<option value="" disabled selected>Objets principaux...</option>
+								<option>Ange gardien</option>
+								<option>Approche de l'hiver</option>
+								<option>Arc axiomatique</option>
+								<option>Arc-bouclier immortel</option>
+								<option>Armure de Warmog</option>
+								<option>Armure sanguine</option>
+								<option>Au bout du rouleau</option>
+								<option>Bâton de l'Archange</option>
+								<option>Bâton des flots</option>
+								<option>Bâton du vide</option>
+								<option>Bâton séculaire</option>
+								<option>Bénédiction de Mikael</option>
+								<option>Brise-coques</option>
+								<option>Canon ultrarapide</option>
+								<option>Ceinture-roquette Hextech</option>
+								<option>Chant de guerre de Shurelya</option>
+								<option>Ciel éventré</option>
+								<option>Cimeterre mercuriel</option>
+								<option>Coeuracier</option>
+								<option>Coeur de l'aube</option>
+								<option>Coeur gelé</option>
+								<option>Coiffe de Rabadon</option>
+								<option>Compagnon de Luden</option>
+								<option>Concentration lointaine</option>
+								<option>Convergence de Zeke</option>
+								<option>Cotte épineuse</option>
+								<option>Couperet noir</option>
+								<option>Créateur de failles</option>
+								<option>Crochet de serpent</option>
+								<option>Cyclosabre voltaïque</option>
+								<option>Danse de la mort</option>
+								<option>Danseur fantôme</option>
+								<option>Dent de Nashor</option>
+								<option>Déséspoir infini</option>
+								<option>Echos d'Hélia</option>
+								<option>Eclipse</option>
+								<option>Egide solaire</option>
+								<option>Encensoir ardent</option>
+								<option>Epée dentelée chimico-punk</option>
+								<option>Estropieur</option>
+								<option>Faux spectrale</option>
+								<option>Flamme-ombre</option>
+								<option>Fléau de Liche</option>
+								<option>Flèches des Yun Tal</option>
+								<option>Fleur de crypte</option>
+								<option>Force de la nature</option>
+								<option>Force de la trinité</option>
+								<option>Gage de Sterak</option>
+								<option>Gantelet givrant</option>
+								<option>Glaive d'ombre</option>
+								<option>Gueule de Malmortius</option>
+								<option>Hexplaque expérimentale</option>
+								<option>Hydre profane</option>
+								<option>Hydre titanesque</option>
+								<option>Hydre vorace</option>
+								<option>Jak'Sho le protéiforme</option>
+								<option>Lame d'infini</option>
+								<option>Lame du roi déchu</option>
+								<option>Lame enragée de Guinsoo</option>
+								<option>Lame spectre de Youmuu</option>
+								<option>Lance de Shojin</option>
+								<option>Malfaisance</option>
+								<option>Manamune</option>
+								<option>Mandat impérial</option>
+								<option>Manteau de la nuit</option>
+								<option>Masque abyssal</option>
+								<option>Médaillon d'Iron Solari</option>
+								<option>Morellonomicon</option>
+								<option>Onde orageuse</option>
+								<option>Opportunité</option>
+								<option>Orgueil</option>
+								<option>Ouragan de Runaan</option>
+								<option>Percepteur</option>
+								<option>Plaque du mort</option>
+								<option>Présage de Randuin</option>
+								<option>Poignard de Statikk</option>
+								<option>Rancune de Serylda</option>
+								<option>Rappel mortel</option>
+								<option>Rayonnement du vide</option>
+								<option>Rédemption</option>
+								<option>Régénérateur de pierre de lune</option>
+								<option>Rookern kaénique</option>
+								<option>Sablier de Zhonya</option>
+								<option>Sac de l'explorateur</option>
+								<option>Salutations de Dominik</option>
+								<option>Sceptre de Rylai</option>
+								<option>Soif-de-sang</option>
+								<option>Terminus</option>
+								<option>Torche noire</option>
+								<option>Tourment de Liandry</option>
+								<option>Tremblelame Navori</option>
+								<option>Tueur de Kraken</option>
+								<option>Visage spirituel</option>
+								<option>Voeu du chevalier</option>
+								<option>Voile de la Banshee</option>
+								<option>Voleur d'âme de Mejai</option>
+								<option>Volonté cosmique</option>
+							</select>
+						</div>
+
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="objet3"> 3ème Objet</label> 
+							<select class="zone-formulaire" id="objet3" name="objet3" size=1 required>
+								<option value="" disabled selected>Objets adaptables...</option>
+								<option>Ange gardien</option>
+								<option>Approche de l'hiver</option>
+								<option>Arc axiomatique</option>
+								<option>Arc-bouclier immortel</option>
+								<option>Armure de Warmog</option>
+								<option>Armure sanguine</option>
+								<option>Au bout du rouleau</option>
+								<option>Bâton de l'Archange</option>
+								<option>Bâton des flots</option>
+								<option>Bâton du vide</option>
+								<option>Bâton séculaire</option>
+								<option>Bénédiction de Mikael</option>
+								<option>Brise-coques</option>
+								<option>Canon ultrarapide</option>
+								<option>Ceinture-roquette Hextech</option>
+								<option>Chant de guerre de Shurelya</option>
+								<option>Ciel éventré</option>
+								<option>Cimeterre mercuriel</option>
+								<option>Coeuracier</option>
+								<option>Coeur de l'aube</option>
+								<option>Coeur gelé</option>
+								<option>Coiffe de Rabadon</option>
+								<option>Compagnon de Luden</option>
+								<option>Concentration lointaine</option>
+								<option>Convergence de Zeke</option>
+								<option>Cotte épineuse</option>
+								<option>Couperet noir</option>
+								<option>Créateur de failles</option>
+								<option>Crochet de serpent</option>
+								<option>Cyclosabre voltaïque</option>
+								<option>Danse de la mort</option>
+								<option>Danseur fantôme</option>
+								<option>Dent de Nashor</option>
+								<option>Déséspoir infini</option>
+								<option>Echos d'Hélia</option>
+								<option>Eclipse</option>
+								<option>Egide solaire</option>
+								<option>Encensoir ardent</option>
+								<option>Epée dentelée chimico-punk</option>
+								<option>Estropieur</option>
+								<option>Faux spectrale</option>
+								<option>Flamme-ombre</option>
+								<option>Fléau de Liche</option>
+								<option>Flèches des Yun Tal</option>
+								<option>Fleur de crypte</option>
+								<option>Force de la nature</option>
+								<option>Force de la trinité</option>
+								<option>Gage de Sterak</option>
+								<option>Gantelet givrant</option>
+								<option>Glaive d'ombre</option>
+								<option>Gueule de Malmortius</option>
+								<option>Hexplaque expérimentale</option>
+								<option>Hydre profane</option>
+								<option>Hydre titanesque</option>
+								<option>Hydre vorace</option>
+								<option>Jak'Sho le protéiforme</option>
+								<option>Lame d'infini</option>
+								<option>Lame du roi déchu</option>
+								<option>Lame enragée de Guinsoo</option>
+								<option>Lame spectre de Youmuu</option>
+								<option>Lance de Shojin</option>
+								<option>Malfaisance</option>
+								<option>Manamune</option>
+								<option>Mandat impérial</option>
+								<option>Manteau de la nuit</option>
+								<option>Masque abyssal</option>
+								<option>Médaillon d'Iron Solari</option>
+								<option>Morellonomicon</option>
+								<option>Onde orageuse</option>
+								<option>Opportunité</option>
+								<option>Orgueil</option>
+								<option>Ouragan de Runaan</option>
+								<option>Percepteur</option>
+								<option>Plaque du mort</option>
+								<option>Présage de Randuin</option>
+								<option>Poignard de Statikk</option>
+								<option>Rancune de Serylda</option>
+								<option>Rappel mortel</option>
+								<option>Rayonnement du vide</option>
+								<option>Rédemption</option>
+								<option>Régénérateur de pierre de lune</option>
+								<option>Rookern kaénique</option>
+								<option>Sablier de Zhonya</option>
+								<option>Sac de l'explorateur</option>
+								<option>Salutations de Dominik</option>
+								<option>Sceptre de Rylai</option>
+								<option>Soif-de-sang</option>
+								<option>Terminus</option>
+								<option>Torche noire</option>
+								<option>Tourment de Liandry</option>
+								<option>Tremblelame Navori</option>
+								<option>Tueur de Kraken</option>
+								<option>Visage spirituel</option>
+								<option>Voeu du chevalier</option>
+								<option>Voile de la Banshee</option>
+								<option>Voleur d'âme de Mejai</option>
+								<option>Volonté cosmique</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="objet4"> 4ème Objet</label> 
+							<select class="zone-formulaire" id="objet4" name="objet4" size=1 required>
+								<option value="" disabled selected>Objets adaptables...</option>
+								<option>Ange gardien</option>
+								<option>Approche de l'hiver</option>
+								<option>Arc axiomatique</option>
+								<option>Arc-bouclier immortel</option>
+								<option>Armure de Warmog</option>
+								<option>Armure sanguine</option>
+								<option>Au bout du rouleau</option>
+								<option>Bâton de l'Archange</option>
+								<option>Bâton des flots</option>
+								<option>Bâton du vide</option>
+								<option>Bâton séculaire</option>
+								<option>Bénédiction de Mikael</option>
+								<option>Brise-coques</option>
+								<option>Canon ultrarapide</option>
+								<option>Ceinture-roquette Hextech</option>
+								<option>Chant de guerre de Shurelya</option>
+								<option>Ciel éventré</option>
+								<option>Cimeterre mercuriel</option>
+								<option>Coeuracier</option>
+								<option>Coeur de l'aube</option>
+								<option>Coeur gelé</option>
+								<option>Coiffe de Rabadon</option>
+								<option>Compagnon de Luden</option>
+								<option>Concentration lointaine</option>
+								<option>Convergence de Zeke</option>
+								<option>Cotte épineuse</option>
+								<option>Couperet noir</option>
+								<option>Créateur de failles</option>
+								<option>Crochet de serpent</option>
+								<option>Cyclosabre voltaïque</option>
+								<option>Danse de la mort</option>
+								<option>Danseur fantôme</option>
+								<option>Dent de Nashor</option>
+								<option>Déséspoir infini</option>
+								<option>Echos d'Hélia</option>
+								<option>Eclipse</option>
+								<option>Egide solaire</option>
+								<option>Encensoir ardent</option>
+								<option>Epée dentelée chimico-punk</option>
+								<option>Estropieur</option>
+								<option>Faux spectrale</option>
+								<option>Flamme-ombre</option>
+								<option>Fléau de Liche</option>
+								<option>Flèches des Yun Tal</option>
+								<option>Fleur de crypte</option>
+								<option>Force de la nature</option>
+								<option>Force de la trinité</option>
+								<option>Gage de Sterak</option>
+								<option>Gantelet givrant</option>
+								<option>Glaive d'ombre</option>
+								<option>Gueule de Malmortius</option>
+								<option>Hexplaque expérimentale</option>
+								<option>Hydre profane</option>
+								<option>Hydre titanesque</option>
+								<option>Hydre vorace</option>
+								<option>Jak'Sho le protéiforme</option>
+								<option>Lame d'infini</option>
+								<option>Lame du roi déchu</option>
+								<option>Lame enragée de Guinsoo</option>
+								<option>Lame spectre de Youmuu</option>
+								<option>Lance de Shojin</option>
+								<option>Malfaisance</option>
+								<option>Manamune</option>
+								<option>Mandat impérial</option>
+								<option>Manteau de la nuit</option>
+								<option>Masque abyssal</option>
+								<option>Médaillon d'Iron Solari</option>
+								<option>Morellonomicon</option>
+								<option>Onde orageuse</option>
+								<option>Opportunité</option>
+								<option>Orgueil</option>
+								<option>Ouragan de Runaan</option>
+								<option>Percepteur</option>
+								<option>Plaque du mort</option>
+								<option>Présage de Randuin</option>
+								<option>Poignard de Statikk</option>
+								<option>Rancune de Serylda</option>
+								<option>Rappel mortel</option>
+								<option>Rayonnement du vide</option>
+								<option>Rédemption</option>
+								<option>Régénérateur de pierre de lune</option>
+								<option>Rookern kaénique</option>
+								<option>Sablier de Zhonya</option>
+								<option>Sac de l'explorateur</option>
+								<option>Salutations de Dominik</option>
+								<option>Sceptre de Rylai</option>
+								<option>Soif-de-sang</option>
+								<option>Terminus</option>
+								<option>Torche noire</option>
+								<option>Tourment de Liandry</option>
+								<option>Tremblelame Navori</option>
+								<option>Tueur de Kraken</option>
+								<option>Visage spirituel</option>
+								<option>Voeu du chevalier</option>
+								<option>Voile de la Banshee</option>
+								<option>Voleur d'âme de Mejai</option>
+								<option>Volonté cosmique</option>
+							</select>
+						</div>
+
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="objet5"> 5ème Objet*</label> 
+							<select class="zone-formulaire" id="objet5" name="objet5" size=1>
+								<option value="" disabled selected>Objet final...</option>
+								<option>Ange gardien</option>
+								<option>Approche de l'hiver</option>
+								<option>Arc axiomatique</option>
+								<option>Arc-bouclier immortel</option>
+								<option>Armure de Warmog</option>
+								<option>Armure sanguine</option>
+								<option>Au bout du rouleau</option>
+								<option>Bâton de l'Archange</option>
+								<option>Bâton des flots</option>
+								<option>Bâton du vide</option>
+								<option>Bâton séculaire</option>
+								<option>Bénédiction de Mikael</option>
+								<option>Brise-coques</option>
+								<option>Canon ultrarapide</option>
+								<option>Ceinture-roquette Hextech</option>
+								<option>Chant de guerre de Shurelya</option>
+								<option>Ciel éventré</option>
+								<option>Cimeterre mercuriel</option>
+								<option>Coeuracier</option>
+								<option>Coeur de l'aube</option>
+								<option>Coeur gelé</option>
+								<option>Coiffe de Rabadon</option>
+								<option>Compagnon de Luden</option>
+								<option>Concentration lointaine</option>
+								<option>Convergence de Zeke</option>
+								<option>Cotte épineuse</option>
+								<option>Couperet noir</option>
+								<option>Créateur de failles</option>
+								<option>Crochet de serpent</option>
+								<option>Cyclosabre voltaïque</option>
+								<option>Danse de la mort</option>
+								<option>Danseur fantôme</option>
+								<option>Dent de Nashor</option>
+								<option>Déséspoir infini</option>
+								<option>Echos d'Hélia</option>
+								<option>Eclipse</option>
+								<option>Egide solaire</option>
+								<option>Encensoir ardent</option>
+								<option>Epée dentelée chimico-punk</option>
+								<option>Estropieur</option>
+								<option>Faux spectrale</option>
+								<option>Flamme-ombre</option>
+								<option>Fléau de Liche</option>
+								<option>Flèches des Yun Tal</option>
+								<option>Fleur de crypte</option>
+								<option>Force de la nature</option>
+								<option>Force de la trinité</option>
+								<option>Gage de Sterak</option>
+								<option>Gantelet givrant</option>
+								<option>Glaive d'ombre</option>
+								<option>Gueule de Malmortius</option>
+								<option>Hexplaque expérimentale</option>
+								<option>Hydre profane</option>
+								<option>Hydre titanesque</option>
+								<option>Hydre vorace</option>
+								<option>Jak'Sho le protéiforme</option>
+								<option>Lame d'infini</option>
+								<option>Lame du roi déchu</option>
+								<option>Lame enragée de Guinsoo</option>
+								<option>Lame spectre de Youmuu</option>
+								<option>Lance de Shojin</option>
+								<option>Malfaisance</option>
+								<option>Manamune</option>
+								<option>Mandat impérial</option>
+								<option>Manteau de la nuit</option>
+								<option>Masque abyssal</option>
+								<option>Médaillon d'Iron Solari</option>
+								<option>Morellonomicon</option>
+								<option>Onde orageuse</option>
+								<option>Opportunité</option>
+								<option>Orgueil</option>
+								<option>Ouragan de Runaan</option>
+								<option>Percepteur</option>
+								<option>Plaque du mort</option>
+								<option>Présage de Randuin</option>
+								<option>Poignard de Statikk</option>
+								<option>Rancune de Serylda</option>
+								<option>Rappel mortel</option>
+								<option>Rayonnement du vide</option>
+								<option>Rédemption</option>
+								<option>Régénérateur de pierre de lune</option>
+								<option>Rookern kaénique</option>
+								<option>Sablier de Zhonya</option>
+								<option>Sac de l'explorateur</option>
+								<option>Salutations de Dominik</option>
+								<option>Sceptre de Rylai</option>
+								<option>Soif-de-sang</option>
+								<option>Terminus</option>
+								<option>Torche noire</option>
+								<option>Tourment de Liandry</option>
+								<option>Tremblelame Navori</option>
+								<option>Tueur de Kraken</option>
+								<option>Visage spirituel</option>
+								<option>Voeu du chevalier</option>
+								<option>Voile de la Banshee</option>
+								<option>Voleur d'âme de Mejai</option>
+								<option>Volonté cosmique</option>
+							</select>
+							<em>Trop occasionnel donc pas obligatoire</em>
+						</div>
+					</div>
+
+					<div class="text-formulaire">Sorts d'invocateurs&nbsp;:</div>
+					<div class="partie-formulaire row">
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="flash" name="summoner[]" value="flash">
+							<label for="flash"> Saut éclair</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="fantome" name="summoner[]" value="fantome">
+							<label for="fantome"> Fantôme</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="tp" name="summoner[]" value="tp">
+							<label for="tp"> Téléportation</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="soin" name="summoner[]" value="soin">
+							<label for="soin"> Soin</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="barriere" name="summoner[]" value="barriere">
+							<label for="barriere"> Barrière</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="ignite" name="summoner[]" value="ignite">
+							<label for="ignite"> Embrasement</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="fatigue" name="summoner[]" value="fatigue">
+							<label for="fatigue"> Fatigue</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-12 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="purge" name="summoner[]" value="purge">
+							<label for="purge"> Purge</label>
+						</div>
+
+						<div class="checkbox-formulaire col-xs-6 col-sm-4 col-md-4 col-lg-2">
+							<input type="checkbox" id="smite" name="summoner[]" value="smite">
+							<label for="smite"> Châtiment</label><br/>
+						</div>
+					</div>
+
+					<div class="partie-formulaire row">
+						<div class="souspartie-formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<label for="runes"> Plus d'informations sur les runes&nbsp;:</label>
+							<textarea id="runes" style="height:90px" class="zone-formulaire" name="runes" rows="2" cols="75" required></textarea>
+						</div>
+					</div>
+
+					<input class="bouton-formulaire" type="submit" value="Valider" /> 
+
+				</fieldset>
+			</form>
+			<div class="notification" id="confirmationMessage">Formulaire envoyé avec succès !</div>
+		</div>
+	</div>
+
+<script>
+	document.getElementById('creationtrollpick').addEventListener('submit', async function (e) {
+	    const form = e.target;
+
+	    if (!form.checkValidity()) {
+	        e.preventDefault();
+	        form.reportValidity();
+	        return;
+	    }
+
+	    e.preventDefault();
+	    const formData = new FormData(form);
+
+	    try {
+	        const response = await fetch('traitement.php', {
+	            method: 'POST',
+	            body: formData
+	        });
+
+	        if (response.ok) {
+	            form.reset();
+
+	            const notification = document.getElementById('confirmationMessage');
+	            notification.classList.add('show');
+	            setTimeout(() => {
+	                notification.classList.remove('show');
+	            }, 3000);
+	        } else {
+	            console.error("Erreur lors de l'envoi du formulaire");
+	        }
+	    } catch (error) {
+	        console.error("Erreur de connexion", error);
+	    }
+	});
+</script>	

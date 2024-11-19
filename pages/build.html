@@ -1,0 +1,1322 @@
+<h2>Builds</h2>
+	<div class="container">
+		<div class="main-partie">
+
+			<h3>Liste des builds</h3>
+
+			<p>Voici tout les builds que nous avons a vous proposer par rapport à la sélection que vous avez faite. S'il n'y en a pas, pensez à élargir vos critères et si vous pensez qu'il pourrait y en avoir plus n'hésitez pas à proposer vos propres builds dans la catégorie formulaire. Prenez bien en compte que ces builds ne sont pas figés et que vous pouvez les adapter en fonction de votre partie. En particulier pour les rôles, nous en avons mis un de base mais la plupart des builds peuvent très bien être joués sur plusieurs.</p>
+
+            <div id="builds-container">
+            </div>
+
+        </div>
+    </div>
+
+<script>
+    $(document).ready(function () {
+        const champions = [
+            {
+                RoleBuild: "top",
+                ChampionBuild: "aatrox",
+                ImageChampion: "Images/aatrox.jpg",
+                ImageChampionAlt: "Aatrox",
+                NomBuild: "Critrox",
+                NomChampion: "Aatrox",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ghost.jpg",
+                Summoner2Alt: "Fantome",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/percepteur.jpg", alt: "Percepteur" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/salutation de dominik.jpg", alt: "Salutation de Dominik" },
+                    { src: "Images/arc bouclier immortel.jpg", alt: "Arc bouclier immortel" },
+                    { src: "Images/soif de sang.jpg", alt: "Soif de sang" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/concentration absolue.png", alt: "Concentration absolue" },
+                    { src: "Images/tempete menacante.png", alt: "Tempete menaçante" }]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "ahri",
+                ImageChampion: "Images/ahri.jpg",
+                ImageChampionAlt: "Ahri",
+                NomBuild: "Ahrissa",
+                NomChampion: "Ahri",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/poignard de statikk.jpg", alt: "Poignard de Statikk" },
+                    { src: "Images/faux spectrale.jpg", alt: "Faux spectrale" },
+                    { src: "Images/tremblelame navori.jpg", alt: "Tremblelame Navori" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/canon ultrarapide.jpg", alt: "Canon ultrarapide" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/gout du sang.png", alt: "Gout du sang" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "akali",
+                ImageChampion: "Images/akali.jpg",
+                ImageChampionAlt: "Akali",
+                NomBuild: "Hakali",
+                NomChampion: "Akali",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/anneau de doran.jpg",
+                StarterItemAlt: "Anneau de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_tp.jpg",
+                Summoner2Alt: "Téléportation",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/eclipse.jpg", alt: "Eclipse" },
+                    { src: "Images/ciel eventre.jpg", alt: "Ciel éventré" },
+                    { src: "Images/createur de failles.jpg", alt: "Créateur de failles" },
+                    { src: "Images/tourment de liandry.jpg", alt: "tourment de liandry" },
+                    { src: "Images/gage de sterak.jpg", alt: "Gage de Sterak" }],
+                RunesPrincipales: [
+                    { src: "Images/conquerant.png", alt: "Conquérant" },
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/legende haste.png", alt: "Légende : accélération" },
+                    { src: "Images/baroud d'honneur.png", alt: "Baroud d'honneur" }],
+                RunesSecondaires: [
+                    { src: "Images/demolisseur.png", alt: "Démolisseur" },
+                    { src: "Images/second souffle.png", alt: "Second souffle" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "alistar",
+                ImageChampion: "Images/alistar.jpg",
+                ImageChampionAlt: "Alistar",
+                NomBuild: "Hagralistar",
+                NomChampion: "Alistar",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/zaz'zak.jpg", alt: "Pique dimensionnelle de Zaz'zak" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" },
+                    { src: "Images/volonte cosmique.jpg", alt: "Volonté Cosmique" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/coup bas.png", alt: "Coup bas" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/tempete menacante.png", alt: "Tempete menaçante" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "alistar",
+                ImageChampion: "Images/alistar.jpg",
+                ImageChampionAlt: "Alistar",
+                NomBuild: "Alistarte",
+                NomChampion: "Alistar",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/bottes de lucidite.jpg", alt: "Bottes de lucidité" },
+                    { src: "Images/coeuracier.jpg", alt: "Coeuracier" },
+                    { src: "Images/approche de l'hiver.jpg", alt: "Approche de l'hiver" },
+                    { src: "Images/hydre titanesque.jpg", alt: "Hydre titanesque" },
+                    { src: "Images/force de la nature.jpg", alt: "Force de la nature" },
+                    { src: "Images/coeur gele.jpg", alt: "Coeur gelé" }],
+                RunesPrincipales: [
+                    { src: "Images/poigne de limmortel.png", alt: "Poigne de l'immortel" },
+                    { src: "Images/demolisseur.png", alt: "Démolisseur" },
+                    { src: "Images/plaque dos.png", alt: "Plaques d'os" },
+                    { src: "Images/inebranlable.png", alt: "Inébranlable" }],
+                RunesSecondaires: [
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/transcendance.png", alt: "Transcendance" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "amumu",
+                ImageChampion: "Images/amumu.jpg",
+                ImageChampionAlt: "Amumu",
+                NomBuild: "Amumuscle",
+                NomChampion: "Amumu",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/tueur de kraken.jpg", alt: "Tueur de kraken" },
+                    { src: "Images/hexplaque experimentale.jpg", alt: "Hexplaque expérimentale" },
+                    { src: "Images/dent de nashor.jpg", alt: "Dent de Nashor" },
+                    { src: "Images/force de la trinite.jpg", alt: "Force de le trinité" },
+                    { src: "Images/au bout du rouleau.jpg", alt: "Au bout du rouleau" }],
+                RunesPrincipales: [
+                    { src: "Images/tempo mortel.png", alt: "Tempo mortelle" },
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }],
+                RunesSecondaires: [
+                    { src: "Images/fontaine de vie.png", alt: "Fontaine de vie" },
+                    { src: "Images/second souffle.png", alt: "Second souffle" }]
+            },
+
+
+            {
+                RoleBuild: "adc",
+                ChampionBuild: "amumu",
+                ImageChampion: "Images/amumu.jpg",
+                ImageChampionAlt: "Amumu",
+                NomBuild: "Amumunition",
+                NomChampion: "Amumu",
+                ImageRole: "Images/adc.png",
+                ImageRoleAlt: "ADC",
+                StarterItem: "Images/bouclier de doran.jpg",
+                StarterItemAlt: "Bouclier de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_barriere.jpg",
+                Summoner2Alt: "Barrière",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/faux spectrale.jpg", alt: "Faux spectrale" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/arc bouclier immortel.jpg", alt: "Arc bouclier immortel" },
+                    { src: "Images/tremblelame navori.jpg", alt: "Tremblelame Navori" },
+                    { src: "Images/soif de sang.jpg", alt: "Soif de sang" }],
+                RunesPrincipales: [
+                    { src: "Images/attaque soutenue.png", alt: "Attaque soutenue" },
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende sangsue.png", alt: "Légende : sangsue" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }],
+                RunesSecondaires: [
+                    { src: "Images/coup bas.png", alt: "Coup bas" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }]
+            },
+
+
+            {
+                RoleBuild: "jgl",
+                ChampionBuild: "anivia",
+                ImageChampion: "Images/anivia.jpg",
+                ImageChampionAlt: "Anivia",
+                NomBuild: "Anivia jungle",
+                NomChampion: "Anivia",
+                ImageRole: "Images/jgl.png",
+                ImageRoleAlt: "Jungle",
+                StarterItem: "Images/saute nuage.jpg",
+                StarterItemAlt: "Saute nuage",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_smite.jpg",
+                Summoner2Alt: "Smite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/torche noire.jpg", alt: "Torche noire" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/fleur de crypte.jpg", alt: "Fleur de crypte" },
+                    { src: "Images/morelonomicon.jpg", alt: "Morelonomicon" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/gout du sang.png", alt: "Gout du sang" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/celerite.png", alt: "Célérité" },
+                    { src: "Images/marche sur l'eau.png", alt: "Marche sur l'eau" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "ashe",
+                ImageChampion: "Images/ashe.jpg",
+                ImageChampionAlt: "Ashe",
+                NomBuild: "Legolashe",
+                NomChampion: "Ashe",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "ignite",
+                Items: [
+                    { src: "Images/bottes de lucidite.jpg", alt: "Bottes de lucidité" },
+                    { src: "Images/zaz'zak.jpg", alt: "Pique dimensionnelle de Zaz'zak" },
+                    { src: "Images/malfaisance.jpg", alt: "malfaisance" },
+                    { src: "Images/manamune.jpg", alt: "Manamune" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/coup bas.png", alt: "coup bas" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/ruban de mana.png", alt: "ruban de mana" },
+                    { src: "Images/brulure.png", alt: "Brulure" }]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "brand",
+                ImageChampion: "Images/brand.jpg",
+                ImageChampionAlt: "Brand",
+                NomBuild: "Brandade",
+                NomChampion: "Brand",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/anneau de doran.jpg",
+                StarterItemAlt: "anneau de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/coques en acier.jpg", alt: "Coques en acier" },
+                    { src: "Images/coeuracier.jpg", alt: "Coeuracier" },
+                    { src: "Images/tourment de liandry.jpg", alt: "Tourment de Liandry" },
+                    { src: "Images/createur de failles.jpg", alt: "Créateur de failles" },
+                    { src: "Images/approche de l'hiver.jpg", alt: "Approche de l'hiver" },
+                    { src: "Images/armure de warmog.jpg", alt: "Armure de Warmog" },],
+                RunesPrincipales: [
+                    { src: "Images/poigne de limmortel.png", alt: "Poigne de  l'immortel" },
+                    { src: "Images/demolisseur.png", alt: "Démolisseur" },
+                    { src: "Images/second souffle.png", alt: "Second souffle" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" }],
+                RunesSecondaires: [
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/legende haste.png", alt: "Légende : accélération" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "braum",
+                ImageChampion: "Images/braum.jpg",
+                ImageChampionAlt: "Braum",
+                NomBuild: "Braum PAF",
+                NomChampion: "Braum",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/melodie du sang.jpg", alt: "Mélodie du sang" },
+                    { src: "Images/tueur de kraken.jpg", alt: "Tueur de kraken" },
+                    { src: "Images/lame du roi dechu.jpg", alt: "Lame du roi déchu" },
+                    { src: "Images/lame enragee de guinsoo.jpg", alt: "Lame enragée de Guinsoo" },
+                    { src: "Images/au bout du rouleau.jpg", alt: "Au bout du rouleau" }],
+                RunesPrincipales: [
+                    { src: "Images/tempo mortel.png", alt: "Tempo mortelle" },
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" },
+                    { src: "Images/abattage.png", alt: "Abattage" }],
+                RunesSecondaires: [
+                    { src: "Images/livraison de cookies.png", alt: "livraison de cookies" },
+                    { src: "Images/savoir cosmique.png", alt: "savoir cosmique" }]
+            },
+
+
+            {
+                RoleBuild: "adc",
+                ChampionBuild: "briar",
+                ImageChampion: "Images/briar.jpg",
+                ImageChampionAlt: "Briar",
+                NomBuild: "Briar ap",
+                NomChampion: "Briar",
+                ImageRole: "Images/adc.png",
+                ImageRoleAlt: "ADC",
+                StarterItem: "Images/anneau de doran.jpg",
+                StarterItemAlt: "Anneau de doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/onde orageuse.jpg", alt: "Onde orageuse" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" },
+                    { src: "Images/baton du vide.jpg", alt: "Baton du vide" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/coup bas.png", alt: "Coup bas" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/chaussures magiques.png", alt: "Chaussures magiques" },
+                    { src: "Images/savoir cosmique.png", alt: "savoir cosmique" }]
+            },
+
+
+            {
+                RoleBuild: "jgl",
+                ChampionBuild: "diana",
+                ImageChampion: "Images/diana.jpg",
+                ImageChampionAlt: "Diana",
+                NomBuild: "Dianaléatoire",
+                NomChampion: "Diana",
+                ImageRole: "Images/jgl.png",
+                ImageRoleAlt: "Jungle",
+                StarterItem: "Images/saute nuage.jpg",
+                StarterItemAlt: "Saute nuage",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_smite.jpg",
+                Summoner2Alt: "Smite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/tueur de kraken.jpg", alt: "Tueur de kraken" },
+                    { src: "Images/dent de nashor.jpg", alt: "Dent de Nashor" },
+                    { src: "Images/lame enragee de guinsoo.jpg", alt: "Lame enragée de Guinsoo" },
+                    { src: "Images/roukern kaenique.jpg", alt: "Roukern kaenique" },
+                    { src: "Images/presage de randuin.jpg", alt: "Présage de Randuin" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/coup bas.png", alt: "coup bas" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/conditionnement.png", alt: "Conditionnement" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" },]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "drmundo",
+                ImageChampion: "Images/drmundo.jpg",
+                ImageChampionAlt: "Dr. Mundo",
+                NomBuild: "Dr. Machette",
+                NomChampion: "Dr. Mundo",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/zaz'zak.jpg", alt: "Pique dimensionnelle de Zaz'zak" },
+                    { src: "Images/onde orageuse.jpg", alt: "onde orageuse" },
+                    { src: "Images/torche noire.jpg", alt: "Torche noire" },
+                    { src: "Images/tourment de liandry.jpg", alt: "Tourment de Liandry" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" }],
+                RunesPrincipales: [
+                    { src: "Images/comete arcanique.png", alt: "Comète arcanique" },
+                    { src: "Images/manteau nuageux.png", alt: "Manteau nuageux" },
+                    { src: "Images/transcendance.png", alt: "Transcendance" },
+                    { src: "Images/brulure.png", alt: "Brulure" }],
+                RunesSecondaires: [
+                    { src: "Images/gout du sang.png", alt: "Gout du sang" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }]
+            },
+
+
+            {
+                RoleBuild: "jgl",
+                ChampionBuild: "graves",
+                ImageChampion: "Images/graves.jpg",
+                ImageChampionAlt: "Graves",
+                NomBuild: "Gravier",
+                NomChampion: "Graves",
+                ImageRole: "Images/jgl.png",
+                ImageRoleAlt: "Jungle",
+                StarterItem: "Images/chardent.jpg",
+                StarterItemAlt: "Chardent",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_smite.jpg",
+                Summoner2Alt: "Chatiment",
+                Items: [
+                    { src: "Images/bottes de celerite.jpg", alt: "Bottes de célérité" },
+                    { src: "Images/cyclosabre voltaique.jpg", alt: "Cyclosabre voltaique" },
+                    { src: "Images/ciel eventre.jpg", alt: "Ciel éventré" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/force de la trinite.jpg", alt: "Force de la trinité" },
+                    { src: "Images/percepteur.jpg", alt: "Percepteur" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur acharne.png", alt: "Chasseur acharné" }],
+                RunesSecondaires: [
+                    { src: "Images/concentration absolue.png", alt: "Concentration absolue" },
+                    { src: "Images/tempete menacante.png", alt: "Tempete menaçante" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "gnar",
+                ImageChampion: "Images/gnar.jpg",
+                ImageChampionAlt: "Gnar",
+                NomBuild: "Ragnarork",
+                NomChampion: "Gnar",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/anneau de doran.jpg",
+                StarterItemAlt: "Anneau de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_tp.jpg",
+                Summoner2Alt: "Téléportation",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/dent de nashor.jpg", alt: "Dent de Nashor" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/ceinture hextech.jpg", alt: "Ceinture hextech" },
+                    { src: "Images/fleur de crypte.jpg", alt: "Fleur de crypte" }],
+                RunesPrincipales: [
+                    { src: "Images/tempo mortel.png", alt: "Tempo mortelle" },
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }],
+                RunesSecondaires: [
+                    { src: "Images/celerite.png", alt: "Célérité" },
+                    { src: "Images/marche sur l'eau.png", alt: "Marche sur l'eau" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "jarvanIV",
+                ImageChampion: "Images/jarvanIV.jpg",
+                ImageChampionAlt: "Jarvan IV",
+                NomBuild: "Jarflag",
+                NomChampion: "Jarvan IV",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/bottes de lucidite.jpg", alt: "Bottes de lucidité" },
+                    { src: "Images/zaz'zak.jpg", alt: "Pique dimensionnelle de Zaz'zak" },
+                    { src: "Images/compagnon de luden.jpg", alt: "Compagnon de Luden" },
+                    { src: "Images/onde orageuse.jpg", alt: "Onde orageuse" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" }],
+                RunesPrincipales: [
+                    { src: "Images/comete arcanique.png", alt: "Comète arcanique" },
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/transcendance.png", alt: "Transcendance" },
+                    { src: "Images/brulure.png", alt: "Brulure" }],
+                RunesSecondaires: [
+                    { src: "Images/livraison de cookies.png", alt: "livraison de cookies" },
+                    { src: "Images/savoir cosmique.png", alt: "Savoir cosmique" }]
+            },
+
+
+            {
+                RoleBuild: "adc",
+                ChampionBuild: "jhin",
+                ImageChampion: "Images/jhin.jpg",
+                ImageChampionAlt: "Jhin",
+                NomBuild: "Tajhine",
+                NomChampion: "Jhin",
+                ImageRole: "Images/adc.png",
+                ImageRoleAlt: "ADC",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_barriere.jpg",
+                Summoner2Alt: "Barrière",
+                Items: [
+                    { src: "Images/bottes de celerite.jpg", alt: "Bottes de célérité" },
+                    { src: "Images/hydre titanesque.jpg", alt: "Hydre titanesque" },
+                    { src: "Images/armure sanguinaire.jpg", alt: "Armure sanguinaire" },
+                    { src: "Images/plaques du mort.jpg", alt: "Plaques du mort" },
+                    { src: "Images/roukern kaenique.jpg", alt: "Roukern kaenique" },
+                    { src: "Images/gage de sterak.jpg", alt: "Gage de Sterak" }],
+                RunesPrincipales: [
+                    { src: "Images/poigne de limmortel.png", alt: "Poigne de l'immortel" },
+                    { src: "Images/fontaine de vie.png", alt: "fontaine de vie" },
+                    { src: "Images/plaque dos.png", alt: "Plaque d'os" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende haste.png", alt: "Légende : accélération" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "k'sante",
+                ImageChampion: "Images/k'sante.jpg",
+                ImageChampionAlt: "K'santé",
+                NomBuild: "K'sanvier",
+                NomChampion: "K'santé",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/bottes de lucidite.jpg", alt: "Bottes de lucidité" },
+                    { src: "Images/reve eveille.jpg", alt: "Reve éveillé" },
+                    { src: "Images/regenerateur de pierre de lune.jpg", alt: "Régénérateur de pierre de lune" },
+                    { src: "Images/redemption.jpg", alt: "Rédemption" },
+                    { src: "Images/coeur de l'aube.jpg", alt: "Coeur de l'aube" },
+                    { src: "Images/benediction de mikael.jpg", alt: "Bénédiction de Mikael" }],
+                RunesPrincipales: [
+                    { src: "Images/invocation d'aery.png", alt: "Tempo Invocation d'Aery" },
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/transcendance.png", alt: "Transcendance" },
+                    { src: "Images/marche sur l'eau.png", alt: "Marche sur l'eau" }],
+                RunesSecondaires: [
+                    { src: "Images/plaque dos.png", alt: "Plaques d'os" },
+                    { src: "Images/revitalisation.png", alt: "Revitalisation" }]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "leblanc",
+                ImageChampion: "Images/leblanc.jpg",
+                ImageChampionAlt: "Leblanc",
+                NomBuild: "Lemoustique",
+                NomChampion: "Leblanc",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/poignard de statikk.jpg", alt: "Poignard de Statikk" },
+                    { src: "Images/cyclosabre voltaique.jpg", alt: "Cyclosabre voltaique" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/canon ultrarapide.jpg", alt: "Canon ultrarapide" },
+                    { src: "Images/faux spectrale.jpg", alt: "Faux spectrale" }],
+                RunesPrincipales: [
+                    { src: "Images/electrocution.png", alt: "Electrocution" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "lissandra",
+                ImageChampion: "Images/lissandra.jpg",
+                ImageChampionAlt: "Lissandra",
+                NomBuild: "Lissandrarme",
+                NomChampion: "Lissandra",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/faux spectrale.jpg", alt: "Faux spectrale" },
+                    { src: "Images/tremblelame navori.jpg", alt: "Tremblelame Navori" },
+                    { src: "Images/soif de sang.jpg", alt: "Soif de sang" },
+                    { src: "Images/Rappel mortel.jpg", alt: "Rappel mortel" },
+                    { src: "Images/lame du roi dechu.jpg", alt: "Lame du roi déchu" },],
+                RunesPrincipales: [
+                    { src: "Images/attaque soutenue.png", alt: "Attaque soutenue" },
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }],
+                RunesSecondaires: [
+                    { src: "Images/coup bas.png", alt: "Coup bas" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }]
+            },
+
+
+            {
+                RoleBuild: "adc",
+                ChampionBuild: "lucian",
+                ImageChampion: "Images/lucian.jpg",
+                ImageChampionAlt: "lucian",
+                NomBuild: "Ultcian",
+                NomChampion: "Lucian",
+                ImageRole: "Images/adc.png",
+                ImageRoleAlt: "ADC",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ghost.jpg",
+                Summoner2Alt: "Fantome",
+                Items: [
+                    { src: "Images/bottes de lucidite.jpg", alt: "Bottes de lucidité" },
+                    { src: "Images/lame spectre de youmuu.jpg", alt: "Lame spectre de Youmuu" },
+                    { src: "Images/manamune.jpg", alt: "Manamune" },
+                    { src: "Images/percepteur.jpg", alt: "Percepteur" },
+                    { src: "Images/salutation de dominik.jpg", alt: "Salutation de Dominik" },
+                    { src: "Images/arc axiomatique.jpg", alt: "Arc axiomatique" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "malphite",
+                ImageChampion: "Images/malphite.jpg",
+                ImageChampionAlt: "Malphite",
+                NomBuild: "Baffite",
+                NomChampion: "Malphite",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/hexplaque experimentale.jpg", alt: "Hexplaque expérimentale" },
+                    { src: "Images/lame du roi dechu.jpg", alt: "Lame du roi déchu" },
+                    { src: "Images/manamune.jpg", alt: "Manamune" },
+                    { src: "Images/tueur de kraken.jpg", alt: "Tueur de kraken" },
+                    { src: "Images/au bout du rouleau.jpg", alt: "Au bout du rouleau" }],
+                RunesPrincipales: [
+                    { src: "Images/tempo mortel.png", alt: "Tempo mortelle" },
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité " },
+                    { src: "Images/baroud d'honneur.png", alt: "Baroud d'honneur" }],
+                RunesSecondaires: [
+                    { src: "Images/demolisseur.png", alt: "Démolisseur" },
+                    { src: "Images/plaque dos.png", alt: "Plaques d'os" }]
+            },
+
+
+            {
+                RoleBuild: "jgl",
+                ChampionBuild: "mordekaiser",
+                ImageChampion: "Images/mordekaiser.jpg",
+                ImageChampionAlt: "Mordekaiser",
+                NomBuild: "Mordecasseur",
+                NomChampion: "Mordekaiser",
+                ImageRole: "Images/jgl.png",
+                ImageRoleAlt: "Jungle",
+                StarterItem: "Images/saute nuage.jpg",
+                StarterItemAlt: "Saute nuage",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_smite.jpg",
+                Summoner2Alt: "Chatiment",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" },
+                    { src: "Images/baton du vide.jpg", alt: "Baton du vide" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/volonte cosmique.jpg", alt: "Volonté cosmique" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/Coup bas.png", alt: "Coup bas" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "nautilus",
+                ImageChampion: "Images/nautilus.jpg",
+                ImageChampionAlt: "Nautilus",
+                NomBuild: "Nautibus",
+                NomChampion: "Nautilus",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/anneau de doran.jpg",
+                StarterItemAlt: "anneau de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/ceinture hextech.jpg", alt: "Ceinture hextech" },
+                    { src: "Images/rayonnement du vide.jpg", alt: "Rayonnement du vide" },
+                    { src: "Images/sablier zhonya.jpg", alt: "Sablier de Zhonya" },
+                    { src: "Images/createur de failles.jpg", alt: "Créateur de failles" },
+                    { src: "Images/tourment de liandry.jpg", alt: "Tourment de liandry" }],
+                RunesPrincipales: [
+                    { src: "Images/apres coup.png", alt: "Après coup" },
+                    { src: "Images/fontaine de vie.png", alt: "Fontaine de vie" },
+                    { src: "Images/plaque dos.png", alt: "Plaques d'os" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" }],
+                RunesSecondaires: [
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/tempete menacante.png", alt: "Tempete menaçante" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "quinn",
+                ImageChampion: "Images/quinn.jpg",
+                ImageChampionAlt: "Quinn",
+                NomBuild: "Queen",
+                NomChampion: "Quinn",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/ames synchronisees.jpg", alt: "Ames synchronisées" },
+                    { src: "Images/gantelet givrant.jpg", alt: "Gantelet givrant" },
+                    { src: "Images/plaques du mort.jpg", alt: "Plaques du mort" },
+                    { src: "Images/roukern kaenique.jpg", alt: "Roukern kaenique" },
+                    { src: "Images/presage de randuin.jpg", alt: "Présage de Randuin" },
+                    { src: "Images/force de la nature.jpg", alt: "Force de la nature" }],
+                RunesPrincipales: [
+                    { src: "Images/glacial augment.png", alt: "Glacial augment" },
+                    { src: "Images/chaussures magiques.png", alt: "Chaussures magiques" },
+                    { src: "Images/livraison de cookies.png", alt: "Livraison de cookies" },
+                    { src: "Images/savoir cosmique.png", alt: "Savoir cosmique" }],
+                RunesSecondaires: [
+                    { src: "Images/fontaine de vie.png", alt: "Fontaine de vie" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" },]
+            },
+
+
+            {
+                RoleBuild: "jgl",
+                ChampionBuild: "shen",
+                ImageChampion: "Images/shen.jpg",
+                ImageChampionAlt: "Shen",
+                NomBuild: "River shen",
+                NomChampion: "Shen",
+                ImageRole: "Images/jgl.png",
+                ImageRoleAlt: "Jungle",
+                StarterItem: "Images/chardent.jpg",
+                StarterItemAlt: "Chardent",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_smite.jpg",
+                Summoner2Alt: "Smite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/hydre titanesque.jpg", alt: "Hydre titanesque" },
+                    { src: "Images/dent de nashor.jpg", alt: "Dent de Nashor" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/tremblelame navori.jpg", alt: "Tremblelame Navori" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/plaque dos.png", alt: "Plaques d'os" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" },]
+            },
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "sylas",
+                ImageChampion: "Images/sylas.jpg",
+                ImageChampionAlt: "Sylas",
+                NomBuild: "Scielas",
+                NomChampion: "Sylas",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ghost.jpg",
+                Summoner2Alt: "Fantome",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/ceinture hextech.jpg", alt: "Ceinture hextech" },
+                    { src: "Images/faux spectrale.jpg", alt: "Faux spectrale" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/arc bouclier immortel.jpg", alt: "Arc bouclier immortel" },
+                    { src: "Images/baton du vide.jpg", alt: "Baton du vide" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "thresh",
+                ImageChampion: "Images/thresh.jpg",
+                ImageChampionAlt: "Thresh",
+                NomBuild: "Threshiant",
+                NomChampion: "Thresh",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/zaz'zak.jpg", alt: "Pique dimensionnelle de Zaz'zak" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/voile de la banshee.jpg", alt: "Voile de la Banshee" },
+                    { src: "Images/sablier zhonya.jpg", alt: "Sablier de Zhonya" },],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/coup bas.png", alt: "Coup bas" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/tempete menacante.png", alt: "Tempete menaçante" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "thresh",
+                ImageChampion: "Images/thresh.jpg",
+                ImageChampionAlt: "Thresh",
+                NomBuild: "Thresh flip flap",
+                NomChampion: "Thresh",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/bouclier de doran.jpg",
+                StarterItemAlt: "bouclier de Doran",
+                Summoner1: "Images/summoner_ghost.jpg",
+                Summoner1Alt: "Ghost",
+                Summoner2: "Images/summoner_tp.jpg",
+                Summoner2Alt: "Téléportation",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/lame du roi dechu.jpg", alt: "Lame du roi déchu" },
+                    { src: "Images/hydre titanesque.jpg", alt: "Hydre titanesque" },
+                    { src: "Images/terminus.jpg", alt: "Terminus" },
+                    { src: "Images/lame enragee de guinsoo.jpg", alt: "Lame enragée de Guinsoo" },
+                    { src: "Images/ouragan de runaan.jpg", alt: "Ouragan de Runaan" },],
+                RunesPrincipales: [
+                    { src: "Images/tempo mortel.png", alt: "Tempo mortelle" },
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }],
+                RunesSecondaires: [
+                    { src: "Images/coup de bouclier.png", alt: "Coup de bouclier" },
+                    { src: "Images/conditionnement.png", alt: "Conditionnement" }]
+            },
+
+
+            {
+                RoleBuild: "sup",
+                ChampionBuild: "vi",
+                ImageChampion: "Images/vi.jpg",
+                ImageChampionAlt: "Vi",
+                NomBuild: "Violence",
+                NomChampion: "Vi",
+                ImageRole: "Images/sup.png",
+                ImageRoleAlt: "Support",
+                StarterItem: "Images/atlas.jpg",
+                StarterItemAlt: "Atlas",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "Ignite",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/melodie du sang.jpg", alt: "Mélodie du sang" },
+                    { src: "Images/percepteur.jpg", alt: "Percepteur" },
+                    { src: "Images/lame d'infini.jpg", alt: "Lame d'infini" },
+                    { src: "Images/rappel mortel.jpg", alt: "Rappel mortel" },
+                    { src: "Images/arc bouclier immortel.jpg", alt: "Arc bouclier immortel" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Arracheur d'oeil" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/livraison de cookies.png", alt: "livraison de cookies" },
+                    { src: "Images/savoir cosmique.png", alt: "Savoir cosmique" }]
+            },
+
+
+
+            {
+                RoleBuild: "mid",
+                ChampionBuild: "warwick",
+                ImageChampion: "Images/warwick.jpg",
+                ImageChampionAlt: "Warwick",
+                NomBuild: "Warspeed",
+                NomChampion: "Warwick",
+                ImageRole: "Images/mid.png",
+                ImageRoleAlt: "Midlane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "lame de doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ghost.jpg",
+                Summoner2Alt: "Fantome",
+                Items: [
+                    { src: "Images/ames synchronisees.jpg", alt: "Ames synchronisées" },
+                    { src: "Images/lame spectre de youmuu.jpg", alt: "Lame spectre de Youmuu" },
+                    { src: "Images/plaques du mort.jpg", alt: "Plaques du mort" },
+                    { src: "Images/cimeterre mercuriel.jpg", alt: "Cimeterre mercuriel" },
+                    { src: "Images/chant de guerre de shurelya.jpg", alt: "Chant de guerre de Shurelya" },
+                    { src: "Images/force de la nature.jpg", alt: "Force de la nature" }],
+                RunesPrincipales: [
+                    { src: "Images/rush phasique.png", alt: "Rush phasique" },
+                    { src: "Images/manteau nuageux.png", alt: "Manteau nuageux" },
+                    { src: "Images/celerite.png", alt: "Célérité" },
+                    { src: "Images/marche sur l'eau.png", alt: "Marche sur l'eau" }],
+                RunesSecondaires: [
+                    { src: "Images/gout du sang.png", alt: "Gout du sang" },
+                    { src: "Images/chasseur acharne.png", alt: "Chasseur acharné" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "warwick",
+                ImageChampion: "Images/warwick.jpg",
+                ImageChampionAlt: "Warwick",
+                NomBuild: "Crocwick",
+                NomChampion: "Warwick",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/anneau de doran.jpg",
+                StarterItemAlt: "Anneau de doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "ignite",
+                Items: [
+                    { src: "Images/chaussures de sorcier.jpg", alt: "Chaussures de sorcier" },
+                    { src: "Images/dent de nashor.jpg", alt: "Dent de Nashor" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/volonte cosmique.jpg", alt: "Volonté cosmique" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/flamme ombre.jpg", alt: "Flamme ombre" }],
+                RunesPrincipales: [
+                    { src: "Images/moisson noire.png", alt: "Moisson noire" },
+                    { src: "Images/gout du sang.png", alt: "Gout du sang" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Célérité" },
+                    { src: "Images/chasseur ultime.png", alt: "Chasseur ultime" }],
+                RunesSecondaires: [
+                    { src: "Images/ruban de mana.png", alt: "Ruban de mana" },
+                    { src: "Images/transcendance.png", alt: "Transcendance" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "xinzhao",
+                ImageChampion: "Images/xinzhao.jpg",
+                ImageChampionAlt: "Xin zhao",
+                NomBuild: "Heal zhao",
+                NomChampion: "Xin zhao",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_barriere.jpg",
+                Summoner2Alt: "Barrière",
+                Items: [
+                    { src: "Images/jambieres de berzerker.jpg", alt: "Jambières de berzerker" },
+                    { src: "Images/dent de nashor.jpg", alt: "Dent de Nashor" },
+                    { src: "Images/lame enragee de guinsoo.jpg", alt: "Lame enragée de Guinsoo" },
+                    { src: "Images/coiffe de rabadon.jpg", alt: "Coiffe de Rabadon" },
+                    { src: "Images/fleau de liche.jpg", alt: "Fléau de Liche" },
+                    { src: "Images/visage spirituel.jpg", alt: "Visage spirituel" }],
+                RunesPrincipales: [
+                    { src: "Images/tempo mortel.png", alt: "Tempo mortelle" },
+                    { src: "Images/presence d'esprit.png", alt: "Présence d'esprit" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }],
+                RunesSecondaires: [
+                    { src: "Images/fontaine de vie.png", alt: "Fontaine de vie" },
+                    { src: "Images/revitalisation.png", alt: "Revitalisation" }]
+            },
+
+
+            {
+                RoleBuild: "adc",
+                ChampionBuild: "xinzhao",
+                ImageChampion: "Images/xinzhao.jpg",
+                ImageChampionAlt: "Xin zhao",
+                NomBuild: "Xin ciao",
+                NomChampion: "Xin zhao",
+                ImageRole: "Images/adc.png",
+                ImageRoleAlt: "ADC",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ghost.jpg",
+                Summoner2Alt: "Fantome",
+                Items: [
+                    { src: "Images/bottes de celerite.jpg", alt: "Bottes de célérité" },
+                    { src: "Images/eclipse.jpg", alt: "Eclipse" },
+                    { src: "Images/ciel eventre.jpg", alt: "Ciel éventré" },
+                    { src: "Images/crochet du serpent.jpg", alt: "Crochet du serpent" },
+                    { src: "Images/rancune de serylda.jpg", alt: "Rancune de Serylda" },
+                    { src: "Images/ange gardien.jpg", alt: "Ange gardien" }],
+                RunesPrincipales: [
+                    { src: "Images/deluge de lames.png", alt: "Déluge de lames" },
+                    { src: "Images/ruee offensive.png", alt: "Ruée offensive" },
+                    { src: "Images/arracheur d'oeil.png", alt: "Célérité" },
+                    { src: "Images/chasseur de tresors.png", alt: "Chasseur de trésors" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/coup de grace.png", alt: "Coup de grace" }]
+            },
+
+
+            {
+                RoleBuild: "top",
+                ChampionBuild: "yasuo",
+                ImageChampion: "Images/yasuo.jpg",
+                ImageChampionAlt: "Yasuo",
+                NomBuild: "Yasugros",
+                NomChampion: "Yasuo",
+                ImageRole: "Images/top.png",
+                ImageRoleAlt: "Toplane",
+                StarterItem: "Images/lame de doran.jpg",
+                StarterItemAlt: "Lame de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_ignite.jpg",
+                Summoner2Alt: "ignite",
+                Items: [
+                    { src: "Images/coques en acier.jpg", alt: "Coques en acier" },
+                    { src: "Images/gantelet givrant.jpg", alt: "Gantelet givrant" },
+                    { src: "Images/hydre titanesque.jpg", alt: "Hydre titanesque" },
+                    { src: "Images/armure sanguinaire.jpg", alt: "Armure sanguinaire" },
+                    { src: "Images/force de la nature.jpg", alt: "Force de la nature" },
+                    { src: "Images/gage de sterak.jpg", alt: "Gage de Sterak" }],
+                RunesPrincipales: [
+                    { src: "Images/poigne de limmortel.png", alt: "Poigne de l'immortel" },
+                    { src: "Images/demolisseur.png", alt: "Démolisseur" },
+                    { src: "Images/plaque dos.png", alt: "Plaques d'os" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" }]
+            },
+
+            {
+                RoleBuild: "adc",
+                ChampionBuild: "yone",
+                ImageChampion: "Images/yone.jpg",
+                ImageChampionAlt: "Yone",
+                NomBuild: "Yone gros",
+                NomChampion: "Yone",
+                ImageRole: "Images/adc.png",
+                ImageRoleAlt: "ADC",
+                StarterItem: "Images/bouclier de doran.jpg",
+                StarterItemAlt: "Bouclier de Doran",
+                Summoner1: "Images/summoner_flash.jpg",
+                Summoner1Alt: "Flash",
+                Summoner2: "Images/summoner_barriere.jpg",
+                Summoner2Alt: "Barrière",
+                Items: [
+                    { src: "Images/coques en acier.jpg", alt: "Coques en acier" },
+                    { src: "Images/coeuracier.jpg", alt: "Coeuracier" },
+                    { src: "Images/gantelet givrant.jpg", alt: "Gantelet givrant" },
+                    { src: "Images/cotte epineuse.jpg", alt: "Cotte épineuse" },
+                    { src: "Images/hydre titanesque.jpg", alt: "Hydre titanesque" },
+                    { src: "Images/armure sanguinaire.jpg", alt: "Armure sanguinaire" }],
+                RunesPrincipales: [
+                    { src: "Images/poigne de limmortel.png", alt: "Poigne de l'immortel" },
+                    { src: "Images/demolisseur.png", alt: "Démolisseur" },
+                    { src: "Images/second souffle.png", alt: "Second souffle" },
+                    { src: "Images/surcroissance.png", alt: "Surcroissance" }],
+                RunesSecondaires: [
+                    { src: "Images/triomphe.png", alt: "Triomphe" },
+                    { src: "Images/legende alarcite.png", alt: "Légende : alarcité" }]
+            },
+        ];
+
+        function template(champion) {
+            return `
+            <div class="tout row mt-3 ${champion.RoleBuild} ${champion.ChampionBuild}">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 build-principal">
+                    <div class="row">
+                        <div class=" col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="portrait-champion">
+                                <img class="image-portrait" src="${champion.ImageChampion}" alt="${champion.ImageChampionAlt}">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                            <div>
+                                <h3>${champion.NomBuild}</h3>
+                                <img class="role-build" src="${champion.ImageRole}" alt="${champion.ImageRoleAlt}">
+                            </div>
+                            <h4>${champion.NomChampion}</h4>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="starter-build">
+                                <div class="starter-item">
+                                    <img src="${champion.StarterItem}" alt="${champion.StarterItemAlt}">
+                                </div>
+                                <div class="starter-summoner">
+                                    <img src="${champion.Summoner1}" alt="${champion.Summoner1Alt}">
+                                    <img src="${champion.Summoner2}" alt="${champion.Summoner2Alt}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                            <div class="build-complet">
+                                ${champion.Items.map(item => `<img src="${item.src}" alt="${item.alt}">`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 build-runes">
+                    <div class="runes-principales">
+                        <ul>
+                            ${champion.RunesPrincipales.map((rune, index) => `
+                                <li>
+                                    <div class="${index === 0 ? 'grandes-runes' : 'petites-runes'}">
+                                        <img src="${rune.src}" alt="${rune.alt}">
+                                    </div>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    <div class="runes-secondaires">
+                        <ul>
+                            ${champion.RunesSecondaires.map(rune => `
+                                <li>
+                                    <div class="petites-runes"><img src="${rune.src}" alt="${rune.alt}"></div>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `;
+        }
+
+        champions.forEach(champion => {
+            $('#builds-container').append(template(champion));
+        });
+
+    	const altsRoleSelectionnes = window.altsRoleSelectionnes;
+    	const altsChampSelectionnes = window.altsChampSelectionnes;
+
+    	$(".tout").each(function() {
+    		const divClasses = $(this).attr("class").split(' ').filter(cls => cls !== 'tout');
+    		const matchesRole = divClasses.some(cls => altsRoleSelectionnes.includes(cls));
+    		const matchesChamp = divClasses.some(cls => altsChampSelectionnes.includes(cls));
+
+    		if (matchesRole && matchesChamp) {
+    			$(this).show();
+    		} else {
+    			$(this).hide();
+    		}
+        });
+    });
+
+</script>

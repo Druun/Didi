@@ -1,0 +1,409 @@
+body{
+	background-color:#1b1f5c;
+	font-family: calibri;
+	color:white;
+	margin:0px;
+	padding : 0px}
+
+.navigation{
+		background-color:#373b61;
+		margin-bottom:2%}
+
+header{
+	display:flex;
+	align-items: center}
+
+header img{
+	max-height: 48px;}
+
+header h1{
+	font-size : 2.25em;
+	margin:0px;
+	font-weight: bold;}
+
+
+nav a{
+	font-size : 1.25em;
+	text-decoration: none;}
+
+nav ul{
+	list-style-type:none;
+	padding:0px;
+	margin:2% 0%}
+
+nav li{
+	margin:0% 1%;
+	display: inline;
+	color:lightgray;}
+
+@media screen and (max-width:450px){
+	nav li{
+		display:block;
+	}
+}
+
+h2{
+	text-align: center;
+	font-size : 2.25em;
+	margin-bottom:2%;
+	font-weight: bold;}
+
+h3{
+	font-size : 2em;
+	margin-bottom:2%}
+
+h4{
+	font-size : 1.5em;
+	margin : 0% 0% 2% 2%}
+
+p{
+	margin-bottom: 2%;}
+
+.main-partie{
+	padding : 5%;
+	background-color:#252968;
+	border-radius: 15px;}
+
+.role{
+	max-width:48px;
+	width: 17%;
+	opacity: 0.5;
+	margin:2px;}
+
+
+.champ{
+	width: 17%;
+	max-width: 48px;
+	opacity: 0.5;
+	margin:2px;
+	border-radius: 5px;}
+
+.selected{
+	opacity: 1;
+	margin:2px;
+	border-radius: 3px;}
+
+.recherche-selection{
+    background-color:#252968;
+    border: solid gray thin;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 500px;
+	margin:5px 0px;}
+
+
+.menu-recherche{
+    display: flex;
+    align-items: center;
+    flex: 1;}
+
+.icone-recherche{
+    background-color: #2a318a;
+    border-right:solid gray thin ;
+    padding:8px;}
+
+.barre-recherche{
+    background-color:#252968;
+    color :lightgray;
+    padding: 9px;
+    font-family : calibri;
+    font-size: 1em;
+    border:none;
+    outline: none;
+    flex: 1;}
+
+.bouton-selection{
+    background-color: #252968;
+    border : none;
+    border-left: solid gray thin;
+    color: lightgray;
+    font-family : calibri;
+    padding: 9px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;}
+
+.bouton-selection.active,.bouton-selection:hover{
+    background-color: #3d47d1;
+    color : white;}
+
+.menu-selection{
+    background-color: #252968;
+    border:solid gray thin;
+    display: none;
+    position: absolute;
+    width:80%;
+    max-width: 500px;
+    border-radius: 3px;
+    margin-top: 5px;
+    padding:5px 0px;
+    overflow:hidden;
+	z-index: 2}
+
+.menu-selection button {
+    background-color: #252968;
+    max-width: 500px;
+    color: lightgray;
+    width: 100%;
+    padding: 11px 15px;
+    border: none;
+    text-align: left;
+    font-size: 1em;
+    font-family:calibri;
+    cursor: pointer;}
+
+.menu-selection button:hover {
+    background-color: #2a318a;}
+
+form{
+	display: flex; 
+	flex-direction: column; 
+	align-items: center;}
+
+fieldset{
+	background-color : #2a318a;
+	border : none;
+	border-radius:5px;
+	width:100%;
+	margin-bottom: 10px;
+	padding:10px;}
+
+legend{
+	font-size:1.5em;
+	font-weight: bold;}
+
+.partie-formulaire{
+	font-size:1.25em;
+	display:flex;
+	margin :0px}
+
+.souspartie-formulaire{
+	padding:0px 10px 20px 10px;}
+
+label{
+	display:inline-block;
+	margin-bottom:5px}
+
+.zone-formulaire{
+	display:block;
+	background-color: #2a318a;
+	border:solid gray thin;
+	border-radius:3px;
+	color:lightgray;
+	font-family : calibri;
+	font-size:1em;
+	padding-block:0px;
+	padding-inline: 0px;
+	padding:5px 10px;
+	width:100%;
+	max-width:500px;
+	height:38px;
+	box-sizing: border-box}
+
+.text-formulaire{
+	font-size :1.25em;
+	margin: 0px 0px 5px 10px;}
+
+.checkbox-formulaire{
+	padding:0px 10px;}
+
+input[type="checkbox"]{
+	transform:scale(1.5);}
+
+form em{
+	font-style: italic;
+	font-size:0.75em}
+
+.zone-formulaire:hover {
+    box-shadow: 0 4px 8px rgba(184, 134, 11, 0.8);}
+
+.zone-formulaire:focus {
+    border-color: #B8860B;
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.8);
+    outline: none;
+    transform: scale(1.02);}
+
+.bouton-formulaire {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	background: linear-gradient(45deg, #808080, #C0C0C0);
+    width: 100%;
+    padding: 15px;
+    margin: 0px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+	transition: background 0.2s, transform 0.2s,box-shadow 0.2s;}
+
+.bouton-formulaire:hover {
+	background: linear-gradient(45deg, #b8860b, #ffd700);
+	transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(184, 134, 11, 0.8);}
+
+.bouton-formulaire:active {
+    transform: scale(0.98);}
+
+.notification {
+    display: none;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;}
+
+.notification.show {
+    display: block;
+    animation: fadeInOut 3s forwards;}
+
+.portrait-champion{
+	display: inline-block;
+	background-color:#2a318a ;
+	padding:10px;
+	border:solid #b8860b thin;
+	border-radius: 5px;}
+
+.image-portrait{
+	width:96px;
+	border-radius:3px}
+
+.tout h3{
+	font-size: 2em;
+	margin-top:2% ;
+	margin-bottom: 4%;
+	font-weight: bold;}
+
+.tout h4{
+	font-size: 1.5em;
+	margin-top:0%;
+	margin-bottom: 4%}
+
+.role-build{
+	max-height:80px;
+	float:right;
+	position:relative;
+	margin-top:-50px}
+
+.starter-build{
+	background-color:#2a318a ;
+	padding:10px;
+	border:solid #b8860b thin;
+	border-radius: 3px;
+	display: inline-flex;}
+
+.starter-item{
+	display: flex;
+	margin-right:4px;}
+
+.starter-item img{
+	vertical-align:top;
+	max-height:64px;
+	border-radius: 3px;}
+
+.starter-summoner{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;}
+
+.starter-summoner img{
+	width:auto;
+	max-height: 32px;
+	border-radius: 3px;}
+
+.build-complet{
+	background-color:#2a318a ;
+	padding:10px;
+	border:solid #b8860b thin;
+	border-radius: 3px;
+	display:inline-flex;
+	flex-direction: row;
+	width:auto}
+
+.build-complet img{
+	margin-right:0.7%;
+	border-radius: 3px;
+	width:16%;
+	max-width:64px}
+
+.build-runes{
+	display:flex;}
+
+.build-runes ul{
+	padding:0px;
+	list-style-type: none;
+	margin-top:20px}
+
+.runes-principales{
+	display: flex;
+	flex-direction: column;}
+
+.runes-secondaires{
+	min-width: 50px;
+	display: flex;
+	flex-direction: column;
+	margin-top:64px}
+
+.grandes-runes{
+	width: 64px;
+	height: 64px;
+	border :solid #b8860b thin;
+	border-radius:32px;
+	margin:0px auto;
+	overflow:hidden}
+
+.petites-runes{
+	width:44px;
+	height: 44px;
+	margin:15px auto 0px;
+	border :solid #b8860b thin;
+	border-radius:22px;
+	overflow:hidden}
+
+.grandes-runes img, .petites-runes img{
+	height: 100%;}
+
+table,th,tr,td{
+	border:solid #1b1f5c thin;
+	text-align: center;}
+
+table{width:100%;
+	background-color:#2a318a;}
+
+th,td{padding: 5px 0px}
+
+th,td:first-child{
+	font-weight:bold;}
+
+td:nth-child(2){
+	color:#ffd700;}
+
+td:nth-child(3){
+	color:lightgray;}
+
+table img{
+	border:solid gray thin;
+	height: 18px; 
+	width:28px}
+
+table strong{
+	color:white;
+	font-weight: bold;
+	font-size: 0.75em}
+
+.case-gagnants{
+	background: linear-gradient(45deg, #b8860b, #ffd700);
+	color:black;}
+
+.case-perdants{
+	background: linear-gradient(45deg, #808080, #C0C0C0);
+	color:black;}
+
+.range-deux{
+	background-color: #252968;}
